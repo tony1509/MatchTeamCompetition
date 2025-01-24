@@ -3,12 +3,11 @@
 
 using namespace Gecode;
 
-class MatchTeam : public Space {
+class MatchTeam : public IntMinimizeSpace {
 protected:
   IntVarArray l;
 public:
   MatchTeam(void) : l(*this, 40, 0, 10) {
-    IntVarArray s(*this, 10, 0, 9999);
 
     for (int i = 0; i < 10; i++)
     {
@@ -21,20 +20,14 @@ public:
         distinct(*this, x);
 
         // each element appears 4 times
-        Gecode::count(*this, l, i, IRT_EQ, 4);
-
-        IntArgs c({1000, 100, 10, 1});
-        // Save finger print for each column
-        linear(*this, c, x, IRT_EQ, s[i]);
+        count(*this, l, i, IRT_EQ, 4);
     }
-
-    distinct(*this, s);
 
     // post branching
     branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());
   }
   // search support
-  MatchTeam(MatchTeam& s) : Space(s) {
+  MatchTeam(MatchTeam& s) : IntMinimizeSpace(s) {
     l.update(*this, s.l);
   }
   virtual Space* copy(void) {
@@ -45,6 +38,10 @@ public:
     for (int i = 0; i < 10; i++) {
         std::cout << l[4*i + 0] << l[4*i + 1] << l[4*i + 2] << l[4*i + 3] << std::endl;
     }
+  }
+
+  virtual IntVar cost(void) const {
+    return money;
   }
 };
 

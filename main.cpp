@@ -8,8 +8,7 @@ protected:
   IntVarArray l;
 public:
   MatchTeam(void) : l(*this, 40, 0, 10) {
-
-    IntVarArgs s(10);
+    IntVarArray s(*this, 10, 0, 9999);
 
     for (int i = 0; i < 10; i++)
     {

@@ -22,7 +22,7 @@ public:
         distinct(*this, x);
 
         // each element appears 4 times
-        count(*this, l, i, IRT_EQ, 4);
+        Gecode::count(*this, l, i, IRT_EQ, 4);
 
         IntArgs c({1000, 100, 10, 1});
         // Save finger print for each column
@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
   delete m;
   // search and print all solutions
   while (MatchTeam* s = e.next()) {
-    s->print(); delete s; break;
+    s->print(); delete s;
   }
   return 0;
 }

@@ -26,7 +26,7 @@ public:
 
         IntArgs c({1000, 100, 10, 1});
         // Save finger print for each column
-        rel(*this, c[0] * l[4*i + 0] + c[1] * l[4*i + 1] + c[2] * l[4*i + 2] + c[3] * l[4*i + 3], IRT_EQ, s[i]);
+        linear(*this, c, x, IRT_EQ, s[i]);
     }
 
     distinct(*this, s);

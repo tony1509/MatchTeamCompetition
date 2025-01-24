@@ -23,12 +23,23 @@ public:
         // each element appears 4 times
         count(*this, l, i, IRT_EQ, 4);
 
+        // finger print of each combination
         IntArgs c({1000, 100, 10, 1});
-
         linear(*this, c, x, IRT_EQ, s[i]);
     }
 
+    // every combination distinct
     distinct(*this, s);
+
+    // every 3 consecutive match should have see all 10 teams
+    for (int i = 0; i < 10 - 3; i++) {
+        IntVarArgs x(12);
+        for (int j = 0; j < 12; j++) {
+            x[j] = l[4*i + j];
+        }
+
+        nvalues(*this, x, 10);
+    }
 
     // post branching
     branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());

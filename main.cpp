@@ -38,11 +38,12 @@ public:
             x[j] = l[4*i + j];
         }
 
-        nvalues(*this, x, IRT_GQ, 8);
+        nvalues(*this, x, IRT_GQ, 7);
     }
 
     // post branching
-    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());
+    RND r(1U);
+    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_RND(r));
   }
   // search support
   MatchTeam(MatchTeam& s) : Space(s) {

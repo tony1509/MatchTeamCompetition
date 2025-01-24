@@ -6,8 +6,9 @@ using namespace Gecode;
 class MatchTeam : public IntMinimizeSpace {
 protected:
   IntVarArray l;
+  IntVarArray s;
 public:
-  MatchTeam(void) : l(*this, 40, 0, 10) {
+  MatchTeam(void) : l(*this, 40, 0, 10), s(*this, 10, 0, 9999) {
 
     for (int i = 0; i < 10; i++)
     {
@@ -21,10 +22,14 @@ public:
 
         // each element appears 4 times
         count(*this, l, i, IRT_EQ, 4);
+
+        rel(*this, s[i] == 1000*x[0] + 100*x[1] + 10*x[2] + 1*x[3]);
     }
 
+    distinct(*this, s);
+
     // post branching
-    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());
+    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_RND());
   }
   // search support
   MatchTeam(MatchTeam& s) : IntMinimizeSpace(s) {

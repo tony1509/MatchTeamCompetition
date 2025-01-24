@@ -44,10 +44,6 @@ public:
         std::cout << l[4*i + 0] << l[4*i + 1] << l[4*i + 2] << l[4*i + 3] << std::endl;
     }
   }
-
-  virtual IntVar cost(void) const {
-    return money;
-  }
 };
 
 // main function

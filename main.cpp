@@ -43,9 +43,7 @@ public:
   // print solution
   void print(void) const {
     for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 4; j++) {
-            std::cout << l[4*i+j] << std::endl;
-        }
+        std::cout << l[4*i + 0] << l[4*i + 1] << l[4*i + 2] << l[4*i + 3] << std::endl;
     }
   }
 };
@@ -58,7 +56,7 @@ int main(int argc, char* argv[]) {
   delete m;
   // search and print all solutions
   while (MatchTeam* s = e.next()) {
-    s->print(); delete s;
+    s->print(); delete s; break;
   }
   return 0;
 }

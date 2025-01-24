@@ -8,7 +8,9 @@ protected:
   IntVarArray l;
 public:
   MatchTeam(void) : l(*this, 40, 0, 10) {
-    
+
+    IntVarArgs s(10);
+
     for (int i = 0; i < 10; i++)
     {
         // every column distinct
@@ -21,7 +23,12 @@ public:
 
         // each element appears 4 times
         count(*this, l, i, IRT_EQ, 4);
+
+        // Save finger print for each column
+        rel(*this, 1000 * l[4*i + 0] + 100 * l[4*i + 1] + 10 * l[4*i + 2] + l[4*i + 3], IRT_EQ, s[i]);
     }
+
+    distinct(*this, s);
 
     // post branching
     branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());
@@ -35,7 +42,11 @@ public:
   }
   // print solution
   void print(void) const {
-    std::cout << l << std::endl;
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 4; j++) {
+            std::cout << l[4*i+j] << std::endl;
+        }
+    }
   }
 };
 
@@ -43,11 +54,11 @@ public:
 int main(int argc, char* argv[]) {
   // create model and search engine
   MatchTeam* m = new MatchTeam;
-  DFS<MatchTeam> e(m);
+  BAB<MatchTeam> e(m);
   delete m;
   // search and print all solutions
   while (MatchTeam* s = e.next()) {
-    s->print(); delete s;
+    s->print(); delete s; break;
   }
   return 0;
 }

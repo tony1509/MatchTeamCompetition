@@ -25,13 +25,13 @@ public:
 
         IntArgs c({1000, 100, 10, 1});
 
-        linear(*this, c, x, INT_EQ, s);
+        linear(*this, c, x, IRT_EQ, s[i]);
     }
 
     distinct(*this, s);
 
     // post branching
-    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_RND(Rnd(10)));
+    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());
   }
   // search support
   MatchTeam(MatchTeam& s) : Space(s) {

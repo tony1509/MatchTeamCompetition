@@ -42,8 +42,7 @@ public:
     }
 
     // post branching
-    RND r(1U);
-    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_RND(r));
+    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());
   }
   // search support
   MatchTeam(MatchTeam& s) : Space(s) {
@@ -68,7 +67,9 @@ int main(int argc, char* argv[]) {
   delete m;
   // search and print all solutions
   while (MatchTeam* s = e.next()) {
-    s->print(); delete s; break;
+    s->print();
+    delete s;
+    std::cout << "------------" << std::endl;
   }
   return 0;
 }

@@ -23,7 +23,9 @@ public:
         // each element appears 4 times
         count(*this, l, i, IRT_EQ, 4);
 
-        rel(*this, s[i] == 1000*x[0] + 100*x[1] + 10*x[2] + 1*x[3]);
+        IntArgs c({1000, 100, 10, 1});
+
+        linear(*this, c, x, INT_EQ, s);
     }
 
     distinct(*this, s);

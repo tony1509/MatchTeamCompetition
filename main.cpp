@@ -31,14 +31,14 @@ public:
     // every combination distinct
     distinct(*this, s);
 
-    // every 3 consecutive match should have see all 10 teams
-    for (int i = 0; i < 10 - 3; i++) {
+    // every 3 consecutive match should see more than 7 different teams
+    for (int i = 0; i < 10 - 2; i++) {
         IntVarArgs x(12);
         for (int j = 0; j < 12; j++) {
             x[j] = l[4*i + j];
         }
 
-        nvalues(*this, x, 10);
+        nvalues(*this, x, IRT_GQ, 8);
     }
 
     // post branching

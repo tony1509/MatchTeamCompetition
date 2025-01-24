@@ -3,7 +3,7 @@
 
 using namespace Gecode;
 
-class MatchTeam : public IntMinimizeSpace {
+class MatchTeam : public Space {
 protected:
   IntVarArray l;
   IntVarArray s;
@@ -32,7 +32,7 @@ public:
     branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_RND());
   }
   // search support
-  MatchTeam(MatchTeam& s) : IntMinimizeSpace(s) {
+  MatchTeam(MatchTeam& s) : Space(s) {
     l.update(*this, s.l);
   }
   virtual Space* copy(void) {

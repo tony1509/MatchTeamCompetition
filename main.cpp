@@ -29,7 +29,7 @@ public:
     distinct(*this, s);
 
     // post branching
-    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_RND());
+    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_RND(Rnd(10)));
   }
   // search support
   MatchTeam(MatchTeam& s) : Space(s) {

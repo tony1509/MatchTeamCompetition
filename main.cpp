@@ -153,7 +153,7 @@ public:
 int main(int argc, char* argv[]) {
   // create model and search engine
   MatchTeam* m = new MatchTeam;
-  DFS<MatchTeam> e(m);
+  BFS<MatchTeam> e(m);
   delete m;
   // search and print all solutions
   while (MatchTeam* s = e.next()) {

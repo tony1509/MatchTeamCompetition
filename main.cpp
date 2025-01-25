@@ -99,7 +99,7 @@ public:
     // count(*this, l, pair14, IRT_GQ, 1);
     count(*this, l, pair15, IRT_GQ, 1);
     // count(*this, l, pair16, IRT_GQ, 1);
-    // count(*this, l, pair17, IRT_GQ, 1);
+    count(*this, l, pair17, IRT_EQ, 1);
     // count(*this, l, pair18, IRT_GQ, 1);
     // count(*this, l, pair19, IRT_GQ, 1);
     count(*this, l, pair20, IRT_GQ, 1);

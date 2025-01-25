@@ -116,11 +116,11 @@ public:
     count(*this, l, pair28, IRT_GQ, 1);
     count(*this, l, pair29, IRT_GQ, 1);
     count(*this, l, pair30, IRT_GQ, 1);
-    // count(*this, l, pair31, IRT_GQ, 1);
-    // count(*this, l, pair32, IRT_GQ, 1);
-    // count(*this, l, pair33, IRT_GQ, 1);
-    // count(*this, l, pair34, IRT_GQ, 1);
-    // count(*this, l, pair35, IRT_GQ, 1);
+    count(*this, l, pair31, IRT_GQ, 1);
+    count(*this, l, pair32, IRT_GQ, 1);
+    count(*this, l, pair33, IRT_GQ, 1);
+    count(*this, l, pair34, IRT_GQ, 1);
+    count(*this, l, pair35, IRT_GQ, 1);
     // count(*this, l, pair36, IRT_GQ, 1);
     // count(*this, l, pair37, IRT_GQ, 1);
     // count(*this, l, pair38, IRT_GQ, 1);

@@ -125,11 +125,11 @@ public:
     count(*this, l, pair37, IRT_GQ, 1);
     count(*this, l, pair38, IRT_GQ, 1);
     count(*this, l, pair39, IRT_GQ, 1);
-    // count(*this, l, pair40, IRT_GQ, 1);
-    // count(*this, l, pair41, IRT_GQ, 1);
-    // count(*this, l, pair42, IRT_GQ, 1);
-    // count(*this, l, pair43, IRT_GQ, 1);
-    // count(*this, l, pair44, IRT_GQ, 1);
+    count(*this, l, pair40, IRT_GQ, 1);
+    count(*this, l, pair41, IRT_GQ, 1);
+    count(*this, l, pair42, IRT_GQ, 1);
+    count(*this, l, pair43, IRT_GQ, 1);
+    count(*this, l, pair44, IRT_GQ, 1);
 
     // post branching
     branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());

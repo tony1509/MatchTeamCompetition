@@ -28,9 +28,9 @@ for i in range(10):
         if i in comb:
             contain_team_dict[i].append(label_combinations[comb])
 
-with open('contain_team.txt', 'w+') as outfile:
-    for i in range(10):
-        outfile.write('{}\n'.format(contain_team_dict[i]))
+# with open('contain_team.txt', 'w+') as outfile:
+#     for i in range(10):
+#         outfile.write('{}\n'.format(contain_team_dict[i]))
 
 for key, _ in contain_pair_dict.items():
     team_1 = int(key[0])
@@ -39,6 +39,10 @@ for key, _ in contain_pair_dict.items():
         if (team_1 in comb) and (team_2 in comb):
             contain_pair_dict[key].append(label_combinations[comb])
 
-with open('contain_pair.txt', 'w+') as outfile:
-    for key, val in contain_pair_dict.items():
-        outfile.write('{}\n'.format(val))
+# with open('contain_pair.txt', 'w+') as outfile:
+#     for key, val in contain_pair_dict.items():
+#         outfile.write('{}\n'.format(val))
+
+x = [0, 28, 29, 30, 120, 121, 138, 204, 208, 209]
+for xi in x:
+    print(reverse_label_combinations[xi])

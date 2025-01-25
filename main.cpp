@@ -15,14 +15,6 @@ public:
     // break symmetry, match in ascending order
     rel(*this, l, IRT_LT);
 
-    // each match difference
-    for (int i = 0; i < 9; i++) {
-      IntVar tmpdiff(*this, 0, 209);
-      IntArgs c({1, -1});
-      IntVarArgs x({l[i], l[i+1]});
-      linear(*this, c, x, IRT_GR, 5);
-    }
-
     // Each team should appear 4 times
     IntSet team0({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83});
     IntSet team1({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139});
@@ -93,47 +85,47 @@ public:
     IntSet pair43({26, 47, 62, 72, 78, 81, 83, 103, 118, 128, 134, 137, 139, 153, 163, 169, 172, 174, 183, 189, 192, 194, 199, 202, 204, 206, 208, 209});
     IntSet pair44({27, 48, 63, 73, 79, 82, 83, 104, 119, 129, 135, 138, 139, 154, 164, 170, 173, 174, 184, 190, 193, 194, 200, 203, 204, 207, 208, 209});
 
-    count(*this, l, pair0, IRT_EQ, 1);
-    // count(*this, l, pair1, IRT_GQ, 1);
-    // count(*this, l, pair2, IRT_GQ, 1);
-    // count(*this, l, pair3, IRT_GQ, 1);
-    // count(*this, l, pair4, IRT_GQ, 1);
+    count(*this, l, pair0, IRT_GQ, 1);
+    count(*this, l, pair1, IRT_GQ, 1);
+    count(*this, l, pair2, IRT_GQ, 1);
+    count(*this, l, pair3, IRT_GQ, 1);
+    count(*this, l, pair4, IRT_GQ, 1);
     count(*this, l, pair5, IRT_GQ, 1);
-    // count(*this, l, pair6, IRT_GQ, 1);
-    // count(*this, l, pair7, IRT_GQ, 1);
-    // count(*this, l, pair8, IRT_GQ, 1);
-    // count(*this, l, pair9, IRT_GQ, 1);
-    count(*this, l, pair10, IRT_GQ, 1);
+    count(*this, l, pair6, IRT_GQ, 1);
+    count(*this, l, pair7, IRT_GQ, 1);
+    count(*this, l, pair8, IRT_GQ, 1);
+    count(*this, l, pair9, IRT_GQ, 1);
+    // count(*this, l, pair10, IRT_GQ, 1);
     // count(*this, l, pair11, IRT_GQ, 1);
     // count(*this, l, pair12, IRT_GQ, 1);
     // count(*this, l, pair13, IRT_GQ, 1);
     // count(*this, l, pair14, IRT_GQ, 1);
-    count(*this, l, pair15, IRT_GQ, 1);
+    // count(*this, l, pair15, IRT_GQ, 1);
     // count(*this, l, pair16, IRT_GQ, 1);
-    count(*this, l, pair17, IRT_EQ, 1);
+    // count(*this, l, pair17, IRT_GQ, 1);
     // count(*this, l, pair18, IRT_GQ, 1);
     // count(*this, l, pair19, IRT_GQ, 1);
-    count(*this, l, pair20, IRT_GQ, 1);
+    // count(*this, l, pair20, IRT_GQ, 1);
     // count(*this, l, pair21, IRT_GQ, 1);
     // count(*this, l, pair22, IRT_GQ, 1);
     // count(*this, l, pair23, IRT_GQ, 1);
     // count(*this, l, pair24, IRT_GQ, 1);
-    count(*this, l, pair25, IRT_GQ, 1);
+    // count(*this, l, pair25, IRT_GQ, 1);
     // count(*this, l, pair26, IRT_GQ, 1);
     // count(*this, l, pair27, IRT_GQ, 1);
     // count(*this, l, pair28, IRT_GQ, 1);
     // count(*this, l, pair29, IRT_GQ, 1);
-    count(*this, l, pair30, IRT_GQ, 1);
+    // count(*this, l, pair30, IRT_GQ, 1);
     // count(*this, l, pair31, IRT_GQ, 1);
     // count(*this, l, pair32, IRT_GQ, 1);
     // count(*this, l, pair33, IRT_GQ, 1);
     // count(*this, l, pair34, IRT_GQ, 1);
-    count(*this, l, pair35, IRT_GQ, 1);
+    // count(*this, l, pair35, IRT_GQ, 1);
     // count(*this, l, pair36, IRT_GQ, 1);
     // count(*this, l, pair37, IRT_GQ, 1);
     // count(*this, l, pair38, IRT_GQ, 1);
     // count(*this, l, pair39, IRT_GQ, 1);
-    count(*this, l, pair40, IRT_GQ, 1);
+    // count(*this, l, pair40, IRT_GQ, 1);
     // count(*this, l, pair41, IRT_GQ, 1);
     // count(*this, l, pair42, IRT_GQ, 1);
     // count(*this, l, pair43, IRT_GQ, 1);

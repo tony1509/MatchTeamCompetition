@@ -17,8 +17,10 @@ public:
 
     // each match difference
     for (int i = 0; i < 9; i++) {
-      IntVar tmpdiff = expr(*this, l[i+1] - l[i]);
-      rel(*this, tmpdiff, IRT_GT, 5);
+      IntVar tmpdiff(*this, 0, 209);
+      IntArgs c({1, -1});
+      IntVarArgs x({l[i], l[i+1]});
+      linear(*this, c, x, IRT_GR, 5);
     }
 
     // Each team should appear 4 times

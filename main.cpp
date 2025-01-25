@@ -157,7 +157,8 @@ int main(int argc, char* argv[]) {
   delete m;
   // search and print all solutions
   while (MatchTeam* s = e.next()) {
-    s->print(); delete s; break;
+    s->print(); delete s;
+    std::cout << "------------------------------" << std::endl;
   }
   return 0;
 }

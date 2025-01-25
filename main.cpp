@@ -131,54 +131,55 @@ public:
     count(*this, l, pair43, IRT_GQ, 1);
     count(*this, l, pair44, IRT_GQ, 1);
 
-    count(*this, l, pair0, IRT_LQ, 3);
-    count(*this, l, pair1, IRT_LQ, 3);
-    count(*this, l, pair2, IRT_LQ, 3);
-    count(*this, l, pair3, IRT_LQ, 3);
-    count(*this, l, pair4, IRT_LQ, 3);
-    count(*this, l, pair5, IRT_LQ, 3);
-    count(*this, l, pair6, IRT_LQ, 3);
-    count(*this, l, pair7, IRT_LQ, 3);
-    count(*this, l, pair8, IRT_LQ, 3);
-    count(*this, l, pair9, IRT_LQ, 3);
-    count(*this, l, pair10, IRT_LQ, 3);
-    count(*this, l, pair11, IRT_LQ, 3);
-    count(*this, l, pair12, IRT_LQ, 3);
-    count(*this, l, pair13, IRT_LQ, 3);
-    count(*this, l, pair14, IRT_LQ, 3);
-    count(*this, l, pair15, IRT_LQ, 3);
-    count(*this, l, pair16, IRT_LQ, 3);
-    count(*this, l, pair17, IRT_LQ, 3);
-    count(*this, l, pair18, IRT_LQ, 3);
-    count(*this, l, pair19, IRT_LQ, 3);
-    count(*this, l, pair20, IRT_LQ, 3);
-    count(*this, l, pair21, IRT_LQ, 3);
-    count(*this, l, pair22, IRT_LQ, 3);
-    count(*this, l, pair23, IRT_LQ, 3);
-    count(*this, l, pair24, IRT_LQ, 3);
-    count(*this, l, pair25, IRT_LQ, 3);
-    count(*this, l, pair26, IRT_LQ, 3);
-    count(*this, l, pair27, IRT_LQ, 3);
-    count(*this, l, pair28, IRT_LQ, 3);
-    count(*this, l, pair29, IRT_LQ, 3);
-    count(*this, l, pair30, IRT_LQ, 3);
-    count(*this, l, pair31, IRT_LQ, 3);
-    count(*this, l, pair32, IRT_LQ, 3);
-    count(*this, l, pair33, IRT_LQ, 3);
-    count(*this, l, pair34, IRT_LQ, 3);
-    count(*this, l, pair35, IRT_LQ, 3);
-    count(*this, l, pair36, IRT_LQ, 3);
-    count(*this, l, pair37, IRT_LQ, 3);
-    count(*this, l, pair38, IRT_LQ, 3);
-    count(*this, l, pair39, IRT_LQ, 3);
-    count(*this, l, pair40, IRT_LQ, 3);
-    count(*this, l, pair41, IRT_LQ, 3);
-    count(*this, l, pair42, IRT_LQ, 3);
-    count(*this, l, pair43, IRT_LQ, 3);
-    count(*this, l, pair44, IRT_LQ, 3);
+    count(*this, l, pair0, IRT_LQ, 2);
+    count(*this, l, pair1, IRT_LQ, 2);
+    count(*this, l, pair2, IRT_LQ, 2);
+    count(*this, l, pair3, IRT_LQ, 2);
+    count(*this, l, pair4, IRT_LQ, 2);
+    count(*this, l, pair5, IRT_LQ, 2);
+    count(*this, l, pair6, IRT_LQ, 2);
+    count(*this, l, pair7, IRT_LQ, 2);
+    count(*this, l, pair8, IRT_LQ, 2);
+    count(*this, l, pair9, IRT_LQ, 2);
+    count(*this, l, pair10, IRT_LQ, 2);
+    count(*this, l, pair11, IRT_LQ, 2);
+    count(*this, l, pair12, IRT_LQ, 2);
+    count(*this, l, pair13, IRT_LQ, 2);
+    count(*this, l, pair14, IRT_LQ, 2);
+    count(*this, l, pair15, IRT_LQ, 2);
+    count(*this, l, pair16, IRT_LQ, 2);
+    count(*this, l, pair17, IRT_LQ, 2);
+    count(*this, l, pair18, IRT_LQ, 2);
+    count(*this, l, pair19, IRT_LQ, 2);
+    count(*this, l, pair20, IRT_LQ, 2);
+    count(*this, l, pair21, IRT_LQ, 2);
+    count(*this, l, pair22, IRT_LQ, 2);
+    count(*this, l, pair23, IRT_LQ, 2);
+    count(*this, l, pair24, IRT_LQ, 2);
+    count(*this, l, pair25, IRT_LQ, 2);
+    count(*this, l, pair26, IRT_LQ, 2);
+    count(*this, l, pair27, IRT_LQ, 2);
+    count(*this, l, pair28, IRT_LQ, 2);
+    count(*this, l, pair29, IRT_LQ, 2);
+    count(*this, l, pair30, IRT_LQ, 2);
+    count(*this, l, pair31, IRT_LQ, 2);
+    count(*this, l, pair32, IRT_LQ, 2);
+    count(*this, l, pair33, IRT_LQ, 2);
+    count(*this, l, pair34, IRT_LQ, 2);
+    count(*this, l, pair35, IRT_LQ, 2);
+    count(*this, l, pair36, IRT_LQ, 2);
+    count(*this, l, pair37, IRT_LQ, 2);
+    count(*this, l, pair38, IRT_LQ, 2);
+    count(*this, l, pair39, IRT_LQ, 2);
+    count(*this, l, pair40, IRT_LQ, 2);
+    count(*this, l, pair41, IRT_LQ, 2);
+    count(*this, l, pair42, IRT_LQ, 2);
+    count(*this, l, pair43, IRT_LQ, 2);
+    count(*this, l, pair44, IRT_LQ, 2);
 
     // post branching
-    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_MIN());
+    Rnd rndA(rand());
+    branch(*this, l, INT_VAR_SIZE_MIN(), INT_VAL_RND(rndA));
   }
   // search support
   MatchTeam(MatchTeam& s) : Space(s) {
@@ -199,7 +200,7 @@ public:
 int main(int argc, char* argv[]) {
   // create model and search engine
   MatchTeam* m = new MatchTeam;
-  BFS<MatchTeam> e(m);
+  DFS<MatchTeam> e(m);
   delete m;
   // search and print all solutions
   while (MatchTeam* s = e.next()) {

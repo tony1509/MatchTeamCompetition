@@ -43,6 +43,6 @@ for key, _ in contain_pair_dict.items():
 #     for key, val in contain_pair_dict.items():
 #         outfile.write('{}\n'.format(val))
 
-x = [27, 43, 51, 66, 101, 113, 128, 141, 168, 186]
+x = [10, 36, 52, 76, 90, 133, 138, 147, 161, 192]
 for xi in x:
     print(reverse_label_combinations[xi])
